@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+</head>
+<body style="overflow:hidden">
+<!--**************   卓正 PageOffice 客户端代码开始    ************************-->
+<script language="javascript" type="text/javascript">
+    function Save() {
+        document.getElementById("PDFCtrl1").WebSave();
+    }
+
+    function InsertSeal() {
+        try {
+            document.getElementById("PDFCtrl1").ZoomSeal.AddSeal();//如果使用ZoomSeal中的USBKEY方式盖章，第一个参数不能为盖章用户登录名，只能为null或者空字符串
+        } catch(e) {}
+    }
+
+
+</script>
+<div style="height:850px;width:auto;" th:utext="${pageoffice}">
+
+</div>
+</body>
+
+</html>
